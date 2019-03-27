@@ -1,6 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+function FancyBorder(props){
+  return (
+    <div>
+      <div className={'FancyBorder FancyBorder-'+props.color}>
+        {props.children}
+      </div>
+      
+    </div>
+  )
+}
+function Dialog(props){
+  return (
+    <div>
+      <FancyBorder color='blue'>
+        <h1 className='Dialog-title'>Welcome</h1>
+        <p>
+          Thank you for visiting our spacecraft!
+        </p>
+      </FancyBorder>
+      { props.bottom }
+    </div>
+  )
+}
+function WelcomeDialog(props) {
+  return(
+    <Dialog bottom={props.welcomeMessage} />
+  )
+}
 const scaleNames = {
   c: 'Celsius',
   f: 'Farenheit'
@@ -412,6 +440,8 @@ class App extends Component {
     const element16 = <Blog posts={posts} />
     const element17 = <NameForm />
     const element18 = <Calculator />
+    const welcomeMessage = <div>Welcome!</div>
+    const element19 = <WelcomeDialog welcomeMessage={welcomeMessage}/>
     return (
       <React.Fragment>
         {/* { element }
@@ -441,7 +471,8 @@ class App extends Component {
         {/* {element15} */}
         {/* {element16} */}
         {/* {element17} */}
-        {element18}
+        {/* {element18} */}
+        {element19}
       </React.Fragment>
     );
   }
