@@ -1,0 +1,22 @@
+<script>
+    // curried function is a function that takes multiple arguments one at a time
+    var add = a => b => a + b;
+    var result = add(2)(3)
+    // console.log(result)
+    // function add(a){
+    //     return function(b){
+    //         return a + b
+    //     }
+    // }
+    // console.log(add(2)(3))
+    //Partial application can take as many or as few argument a time as desired
+    add = (a,c) => (b,d) => a + b + c + d;
+    console.log(add(2,3)(4,5))
+    // function padd(a,c) {
+    //     return function(b){
+    //         return a + b + c
+    //     }
+    // }
+    // result = padd(2,10)(3)
+    // console.log(result)
+</script>
