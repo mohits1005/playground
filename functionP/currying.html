@@ -1,0 +1,63 @@
+<script>
+    var func1 = (a) => {
+        return func2 = (b) => {
+            console.log(a+b);
+        }
+    }
+    // func1(2)(3)
+    var func1 = a => b => console.log(a + b)
+    // func1(2)(3)
+    function currentReadFile(path){
+        status = 1;
+        return function (callback){
+            if(status == 0){
+               callback("file doesnt exist",[])
+            }
+            else{
+               callback(null,{arr:['1','2','3']})
+            }
+        }
+    }
+    var path = ''
+    var read = currentReadFile(path);
+    // read(function(err, data){
+    //     if(err){
+    //         console.log(err);
+    //     }
+    //     else{
+    //         console.log(data);
+    //     }
+    // });
+    var my_object = {
+            '0': 'zero',
+            '1': 'one',
+            '2': 'two',
+            '3': 'three',
+            '4': 'four',
+            length: 5
+        };
+    var sliced = Array.prototype.slice.call(my_object, 3);
+    // console.log(sliced)
+    function func(a){
+        console.log(arguments)
+        console.log(a)
+    }
+    // func.call(this, 1, 2, 3);
+    // func.apply(this, [1,2,3]);
+    // func(1,2,3)
+    var currier = function(fn){
+        var args = Array.prototype.slice.call(arguments, 1);
+        return function(){
+            // console.log(fn(args.concat(Array.prototype.slice.call(arguments, 0))))
+            return fn.apply(this, args.concat(Array.prototype.slice.call(arguments, 0)));
+        }
+    }
+    var sequence = function(start, end){
+        var result = [];
+        result.push(start);
+        result.push(end);
+        return result;
+    }
+    var seq = currier(sequence,1)
+    console.log(seq(5))
+</script>
