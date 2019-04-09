@@ -93,16 +93,65 @@ class ButtonComponent extends Component {
     )
   }
 }
+class RevComponent extends Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return (
+      <div>
+        {this.props.name}
+      </div>
+    )
+  }
+}
+const reverse = (WrappedComponent) => {
+  const HOC = ({children, ...props}) => {
+    return (
+      <WrappedComponent {...props} >
+        {children}
+      </WrappedComponent>
+    )
+  }
+  return HOC
+}
+const TestComponent = ({children, ...props}) => {
+    return (
+      <div>
+        {children} {props.name}
+      </div>
+    )
+}
+class TestComponent2 extends Component{
+  render(){
+    return (
+      <div>
+        {this.props.children} {this.props.name}
+      </div>
+    )
+  }
+}
 class App extends Component {
   render() {
     const SimpleHoc = higherOrderComponent(MyComponent);
     const WrappedComponent = withSecretToLife(DisplayTheSecret);
     const WrappedComponent2 = withStorage(ButtonComponent)
+    const Reverse = reverse(RevComponent);
+    const name = 'moh';
     return (
       <div className="App">
         <SimpleHoc/>
         <WrappedComponent/>
         <WrappedComponent2/>
+        <Reverse name={name} >
+          Hello
+        </Reverse>
+        <TestComponent name={name} >
+          Hi
+        </TestComponent>
+        <TestComponent2 name={name} >
+          Ola
+        </TestComponent2>
       </div>
     );
   }
