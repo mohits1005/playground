@@ -1,68 +1,68 @@
-npm install react-redux
-npm install --save-dev redux-devtools
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# app state example
-{
-  todos: [{
-    text: 'Eat food',
-    completed: true
-  }, {
-    text: 'Exercise',
-    completed: false
-  }],
-  visibilityFilter: 'SHOW_COMPLETED'
-}
+## Available Scripts
 
-# dispatch one of the actions below
-{ type: 'ADD_TODO', text: 'Go to swimming pool' }
-{ type: 'TOGGLE_TODO', index: 1 }
-{ type: 'SET_VISIBILITY_FILTER', filter: 'SHOW_ALL' }
+In the project directory, you can run:
 
-# reducers are functions that takes state and actions as arguments and returns the next state of the app
-function visibilityFilter(state = 'SHOW_ALL', action) {
-  if (action.type === 'SET_VISIBILITY_FILTER') {
-    return action.filter
-  } else {
-    return state
-  }
-}
-function todos(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return state.concat([{ text: action.text, completed: false }])
-    case 'TOGGLE_TODO':
-      return state.map((todo, index) =>
-        action.index === index
-          ? { text: todo.text, completed: !todo.completed }
-          : todo
-      )
-    default:
-      return state
-  }
-}
-# one reducer to manage complete state of our application that calls those 2 reducers for corresponding state keys
-function todoApp(state = {}, action) {
-  return {
-    todos: todos(state.todos, action),
-    visibilityFilter: visibilityFilter(state.visibilityFilter, action)
-  }
-}
+### `npm start`
 
-#three principles
-#get state
-store.getState()
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-#emit an action, an object describing what happened
-store.dispatch({
-  type: 'COMPLETE_TODO',
-  index: 1
-})
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-store.dispatch({
-  type: 'SET_VISIBILITY_FILTER',
-  filter: 'SHOW_COMPLETED'
-})
+### `npm test`
 
-#to specify how the state tree is transformed by actions
-const reducer = combineReducers({ visibilityFilter, todos })
-const store = createStore(reducer)
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
