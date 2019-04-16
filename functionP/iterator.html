@@ -1,0 +1,24 @@
+<script>
+//iterator is an object that implements iteration protocol
+//An iterator object must have a next method that when called will provide
+//an object with a done property and value property
+//iterable object are those that have a method,found at [Symbol.iterator]
+//when it is called they return an iterable object
+
+
+//string is built in iterator object
+var something = 'hi';
+console.log(typeof something[Symbol.iterator]);//function
+var iterator = something[Symbol.iterator]();
+console.log(iterator.next());//{value: "h", done: false}
+console.log(iterator.next());//{value: "i", done: false}
+console.log(iterator.next());//{value: "undefined", done: true}
+
+//spread use iteration protocol
+console.log([...something])//["h", "i"]
+
+//iterables
+//string,array,typedArray,Map and Set - implement @@Iterator
+
+
+</script>

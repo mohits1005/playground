@@ -1,0 +1,21 @@
+<script>
+// generator when called returns a special kind of iterator object called generator
+//first is function *
+//second is use yield keyword to pause function, 
+//yield returns value to right of it and done as null in an object
+//when you call next, it will run till next yield
+//once no more yield or returns something, 
+//function returns object with done as true and value as null,
+function * gen(){
+    yield 1;
+    yield 2;
+    yield 3;
+}
+const g = gen()
+console.log(g)//generator object
+console.log(g.next())//{value: 1, done: false}
+console.log(g.next())//{value: 2, done: false}
+console.log(g.next())//{value: 3, done: false}
+console.log(g.next())//{value: undefined, done: true}
+console.log(g.next())//{value: undefined, done: true}
+</script>
