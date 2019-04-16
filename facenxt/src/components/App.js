@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { Row, Column } from './responsive';
 class App extends Component{
+    constructor(props){
+        super(props);
+    }
+    componentDidMount() {
+        const { match: { params } } = this.props;
+        console.log(params.token);
+    }
     render(){
         return(
             <div>
