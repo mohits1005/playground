@@ -1,21 +1,27 @@
 import React, { Component } from 'react'
-import { Row, Column } from './responsive';
+import { DATA } from '../seed';
+import Box from './Box';
 class App extends Component{
     constructor(props){
         super(props);
+        this.state = {boxes:[]};
     }
     componentDidMount() {
         const { match: { params } } = this.props;
-        console.log(params.token);
+        // console.log(params.token);
+        var data = DATA;
+        // console.log(data);
+        this.setState({boxes: data});
     }
     render(){
+        const {boxes} = this.state;
         return(
             <div>
-                <Row>
-                    <Column sm="10" xs="12">
-                        <h1>Welcome to My Starter App</h1>
-                    </Column>
-                </Row>
+                {boxes.length > 0 && boxes.map((box) => {
+                    return (
+                        <Box key={box.box_id} data={box}/>
+                    )
+                })}
             </div>
         )
     }
