@@ -9,7 +9,7 @@ class Box extends Component{
     componentDidMount(){
         //set policy
         const { box_id, type, content, next } = this.props.data;
-        var policy = '';
+        var policy = '?Policy=';
         var div = document.getElementById(box_id).getElementsByClassName('ql-video');
         if(div.length > 0){
             var src = div[0].src;
