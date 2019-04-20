@@ -14,7 +14,7 @@ class Box extends Component{
         if(div.length > 0){
             var src = div[0].src;
             var new_src = src + policy;
-            console.log(new_src);
+            // console.log(new_src);
             var video_div = document.createElement("VIDEO");
             video_div.classList.add("ql-video");
             video_div.setAttribute("data-video-id", new_src);
@@ -31,17 +31,23 @@ class Box extends Component{
             var p_tag = p_tags[i];
             if (p_tag.innerHTML.trim() == '' || p_tag.innerHTML.trim() == 'Add Quiz')
                 p_tag.parentNode.removeChild(p_tag)
-        }
+        }  
+    
     }
     render(){
         const { box_id, type, content, next} = this.props.data;
+        const avatar = this.props.avatar;
+        const {user, display} = this.props.avatar;
+        const userDisplay = user === 'user' && display == 1 ? '': 'vhidden';
+        const botDisplay = user === 'bot' && display == 1 ? '' : 'vhidden';
+        // console.log(user+' '+display);
         return (
-            <Row className="box" id={box_id}>
-                <Column sm="8" xs="12" center className="playground">
-                    <Column sm="1" xs="12" className="avatar-card" >
+            <Row className='box' id={box_id}>
+                <Column sm="9" xs="12" center className="playground">
+                    <Column sm="1" xs="12" className={"avatar-card " + botDisplay}>
                         <img src="https://facenxt.com/static/imgs/facenxt_bot.svg" alt="" className="avatar" />
                     </Column>
-                    <Column sm="1" xs="12" className="avatar-card" hidden_sm hidden_xs>
+                    <Column sm="1" xs="12" className={"avatar-card " + userDisplay} visible_xs hidden_sm>
                         <div className="avatar user-avatar align-right">
                             <div className="avatar-letter">
                                 M
@@ -51,7 +57,7 @@ class Box extends Component{
                     <Column sm="9" xs="12" className="content-card">
                         <ReactQuill  theme={null} readOnly={true} className="box-content" value={content} />
                     </Column>
-                    <Column sm="1" xs="12" className="avatar-card" hidden_sm hidden_xs>
+                    <Column sm="1" xs="12" className={"avatar-card " + userDisplay} visible_sm hidden_xs>
                         <div className="avatar user-avatar">
                             <div className="avatar-letter">
                                 M

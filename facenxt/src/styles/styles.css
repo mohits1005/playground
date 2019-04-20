@@ -48,7 +48,9 @@ body {
 .box{
   position: relative;
 }
-
+.box .vhidden{
+  visibility: hidden;
+}
 .box-content .ql-editor p {
   margin: 0;
   padding: 0;
