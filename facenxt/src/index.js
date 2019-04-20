@@ -10,14 +10,15 @@ const NoMatch = ({ location }) => (
 )
 const Welcome = ({ location }) => (
     <div>
-        <h3>Try /preview/token</h3>
+        <h3>Try /preview/track/token</h3>
     </div>
 )
 ReactDom.render(
     <BrowserRouter>
         <Switch>
             <Route exact path={'/'} component={Welcome} />
-            <Route exact path={'/preview/:token'} component={App} />
+            {/* <Route exact path={'/preview/:token'} component={App} /> */}
+            <Route exact path={'/preview/:track/:token'} component={App} />
             <Route exact path={'/facenxt/'} component={Welcome} />
             <Route exact path={'/facenxt/preview/:token/'} component={App} />
             <Route component={NoMatch} />

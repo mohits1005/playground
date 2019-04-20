@@ -8,7 +8,7 @@ class App extends Component{
     }
     componentDidMount() {
         const { match: { params } } = this.props;
-        // console.log(params.token);
+        // console.log(params.token+' '+params.track);
         var data = DATA;
         // console.log(data);
         this.setState({boxes: data});
