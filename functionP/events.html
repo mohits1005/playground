@@ -1,0 +1,40 @@
+<html>
+
+<body>
+        <ul class="characters">
+            <li>first</li>
+        </ul>
+        <div class="one">
+            one
+            <div class="two">
+                two
+                <div class="three">
+                    three
+                </div>
+            </div>
+        </div>
+    <script>
+        list = document.querySelectorAll(".characters li")
+        list.forEach(listelem => {
+            listelem.addEventListener('click',function(){alert()})
+        });
+        var e = document.createElement('li')
+        var t = document.createTextNode('second')
+        e.appendChild(t)
+        document.querySelector('ul').appendChild(e)
+        //click for this dynamic element won't work
+        //we use delegation
+        document.querySelector('ul').addEventListener('click',function(event){
+            console.log(event.target)
+        })
+        //using event.target we will get target where event happened
+        //event bubbling
+        var divs = document.querySelectorAll('div')
+        divs.forEach(div => {
+            div.addEventListener('click', function(event){
+                console.log(this.classList.value);
+            })
+        })
+    </script>
+</body>
+</html>
