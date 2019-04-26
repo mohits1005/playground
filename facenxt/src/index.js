@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import App from './components/App'
+import App from './components/Apptest'
 import './styles/styles.css'
+import '../node_modules/codemirror/lib/codemirror.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 const NoMatch = ({ location }) => (
     <div>
