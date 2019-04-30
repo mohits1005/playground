@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale:1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Recruitment</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div>
+        <h1>
+            Recruitment Task
+        </h1>
+        <input id="gitUrl" type="text" placeholder="Type url here..." />
+        <button type="btn" onclick="onButtonClick()">
+            Search
+        </button>
+        <p>
+            Hint: https://github.com/tidyverse/dplyr/
+        </p>
+    </div>
+    <div class="loading hidden">
+        <h2>Loading...</h2>
+    </div>
+    <div class="response hidden">
+        <h2>Github Opened Issues (Note: Pull requests are removed)</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Number</th>
+            </tr>
+            <tr>
+                <td>Total Open Issues</td>
+                <td id="total">-</td>
+            </tr>
+            <tr>
+                <td>Open Issues opened in last 24 hrs</td>
+                <td id="day">-</td>
+            </tr>
+            <tr>
+                <td>Open Issues opened in more than 24 hrs and lesser than 7 days</td>
+                <td id="week">-</td>
+            </tr>
+            <tr>
+                <td>Open Issues opened in more than 7 days</td>
+                <td id="gweek">-</td>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
