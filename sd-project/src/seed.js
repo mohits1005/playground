@@ -1,0 +1,11 @@
+export const DATA = [{ "id":1, "name": "Abdul Wahab", "email": "abdul.wahab@mail.in", "phone":'9008338283',"company":'','starred':0},
+{ "id":2, "name": "Gaurav", "email": "", "phone": '90045568283', "company": 'Turtle Shell','starred':0},
+{ "id":3, "name": "Anton", "email": "anton@chalkstreet.in", "phone": '9008331111', "company": 'Face','starred':0 },
+{ "id":4, "name": "Gp Chalkst", "email": "gp@chalkstreet.com", "phone": '91008338283', "company": 'Chalkst','starred':0 },
+{ "id":5, "name": "hp gas", "email": "", "phone": '9008330852', "company": '','starred':0 },
+{ "id":6, "name": "kushagra", "email": "", "phone": '8858345678', "company": 'Chalkst','starred':0 },
+{ "id":7, "name": "Raj", "email": "rj@chalkstreet.com", "phone": '8808231283', "company": 'Chalkstreet','starred':0 },
+{ "id":8, "name": "Rajeev", "email": "", "phone": '9118338283', "company": 'Infosys','starred':0 },
+{ "id":9, "name": "Cook", "email": "", "phone": '9008121283', "company": '','starred':0 },
+{ "id":10, "name": "Sudha Jio", "email": "", "phone": '9819129821', "company": '','starred':0 },
+]

@@ -1,0 +1,117 @@
+.contact-column{
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 14px;
+    color: #202124;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.contact-column .avatar{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.contact-wrap .contact-person{
+    display: flex;
+}
+.contact-column .contact-name{
+    margin-left: 20px;
+}
+.contact-wrap .contact-mod{
+    display: flex;
+}
+.contact-edit{
+    margin-left: 15px;
+}
+.contact-header{
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    color: #5f6368;
+    font-weight: 500;
+    font-size: 14px;
+}
+.contact-body:hover{
+    background: #f5f5f5;
+    cursor: pointer;
+}
+.contact-body:hover .contact-mod {
+    display: flex;
+}
+
+.contact-wrap .contact-mod {
+    display: none;
+}
+.contact-star,.contact-edit{
+    cursor: pointer;
+}
+.contact-number{
+    color: #5f6368;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.form-input{
+    min-width: 300px;
+    border: 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    font-size: 14px;
+    outline: none;
+    box-shadow: none;
+    margin-bottom: 50px;
+    padding-bottom: 5px;
+}
+.edit-heading{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Roboto,Arial,sans-serif;
+}
+#editForm hr,#insertForm hr{
+    background-color: #d4d6da;
+    height: 1px;
+    border: 0;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.cancel-btn{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: #1a73e8;
+    font-size: 14px;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}
+.save-btn{
+    color: #9aa0a6;
+    font-size: 14px;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}
+.create-btn{
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    background-color: #fff;
+    color: #3c4043;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    border-radius: 2px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500px;
+    outline: none;
+}
+.status{
+    color: red;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
