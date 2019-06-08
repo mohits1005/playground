@@ -6,10 +6,10 @@ import Clickers from './Clickers';
 
 function App() {
   return (
-    <div>
-      <Header text = "Header" />
-      <Clickers />
-    </div>
+      <div>
+          <Header text='Header' />
+          <Clickers />
+      </div>
   );
 }
 
