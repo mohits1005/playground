@@ -1,0 +1,20 @@
+[debug] [2019-07-10T04:38:33.169Z] ----------------------------------------------------------------------
+[debug] [2019-07-10T04:38:33.171Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2019-07-10T04:38:33.171Z] CLI Version:   7.0.2
+[debug] [2019-07-10T04:38:33.171Z] Platform:      linux
+[debug] [2019-07-10T04:38:33.171Z] Node Version:  v8.16.0
+[debug] [2019-07-10T04:38:33.171Z] Time:          Wed Jul 10 2019 10:08:33 GMT+0530 (IST)
+[debug] [2019-07-10T04:38:33.171Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-10T04:38:33.178Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-10T04:38:33.178Z] > authorizing via signed-in user
+[debug] [2019-07-10T04:38:33.178Z] [iam] checking project ngfirebase-70470 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2019-07-10T04:38:33.180Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/ngfirebase-70470:testIamPermissions  
+
+[debug] [2019-07-10T04:38:33.635Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-10T04:38:35.588Z] TypeError: Cannot read property 'wanted' of undefined
+    at /usr/local/lib/node_modules/firebase-tools/lib/checkFirebaseSDKVersion.js:37:51
+    at <anonymous>
+    at process._tickDomainCallback (internal/process/next_tick.js:229:7)
+[error] 
+[error] Error: An unexpected error has occurred.
